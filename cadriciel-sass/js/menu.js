@@ -11,7 +11,7 @@
 
 let menu = {
   javascriptEnabled: document.body.classList.add('js'),
-  strNavClosed: 'Menu',
+  strNavClosed: '<img src="../images/icons8-menu-carré-30.png">',
   strNavOpen: 'Fermer',
   refButton: null,
   refSpan: null,
@@ -23,6 +23,9 @@ let menu = {
     // On crée VIRTUELLEMENT un bouton et un span (pour le texte du bouton)
     this.refButton = document.createElement('button');
     this.refSpan = document.createElement('span');
+    this.refButton.setAttribute('aria-expanded',"false");
+    this.refButton.setAttribute('aria-haspopup',"menu");
+    this.refButton.setAttribute('aria-controls',"navList");
 
     // On ajoute le span dans le bouton
     this.refButton.appendChild(this.refSpan);
@@ -54,8 +57,10 @@ let menu = {
     // On change le texte du bouton selon l'état du menu
     if (this.refNav.classList.contains('nav--closed')) {
       this.refSpan.innerHTML = this.strNavClosed;
+      this.refButton.setAttribute('aria-expanded','true')
     } else {
       this.refSpan.innerHTML = this.strNavOpen;
+      this.refButton.setAttribute('aria-expanded','false')
     }
   }
 };

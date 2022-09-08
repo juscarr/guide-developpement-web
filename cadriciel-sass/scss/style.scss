@@ -39,7 +39,7 @@
    ========================================================================== */
 
 body {
-  color: var(--couleur-texte);
+  color: $couleur-texte;
 }
 
 header .h1,
@@ -67,13 +67,13 @@ header p {
 
 header,
 footer {
-  background-color:$bg-couleur-contraste;
+  background-color: $bg-couleur-contraste;
 }
 
 header {
   padding: 1rem;
   border-bottom: 0.5rem solid $bg-couleur-contraste;
-  border-image: linear-gradient$couleur-secondaire, var$couleur-dominante 27;
+  border-image: linear-gradient ($couleur-secondaire, $couleur-dominante) 27;
 }
 
 /*** Contenus principal et complémentaire ***/
@@ -84,19 +84,25 @@ aside {
 
 @media (min-width: 601px) {
   aside {
-    background-color: var(--bg-couleur-contraste);
+    background-color: $bg-couleur-contraste;
   }
 }
 
 .description {
+  border: {
+    left: {
+      style: solid;
+      width: 5rem;
+      color: $bg-couleur-contraste;
+    }
+
+  }
   padding: 0 2rem 0;
-  border-left: 5rem solid var(--bg-couleur-contraste);
-  border-image: linear-gradient(var(--couleur-dominante), var(--couleur-secondaire)) 27;
 }
 
 .description .h2,
 aside h2 {
-  color: var(--couleur-titres-h1-h3);
+  color: $couleur-titres-h1-h3;
 }
 
 aside h2 {
@@ -119,54 +125,58 @@ aside h2 {
 /*** Architecture des CSS ***/
 dl {
   padding: 1rem 0;
-  background-color: rgba(145, 0, 145, 0.06);
+  background: {
+    color: rgba(145, 0, 145, 0.06);
+  }
 }
 
 dl,
 .infos {
-  border-radius: 10px;
+  border: {
+    radius: 10px;
+  }
 }
 
 .infos {
   padding: 1rem;
-  margin-bottom: 3rem;
+  margin: {
+    bottom: 3rem;
+  }
   background-color: rgb(234, 226, 234);
-}
-
-@media (min-width: 601px) {
-  .infos {
+  @media (min-width: 601px) {
     padding: 1rem calc(10% + 1rem);
-    box-shadow: var(--box-shadow);
+    box-shadow: $box-shadow;
     width: 120%;
-    margin-left: -10%;
-    margin-top: 1rem;
+    margin {
+      top: 1rem;
+      left: -10%;
+    }
+
   }
 }
 
 dt {
   font-family: NewsCycle-bold, sans-serif;
-  color: var(--couleur-dominante);
-}
-
-@media (min-width: 601px) {
-  dt {
+  color: $couleur-dominante;
+  @media (min-width: 601px) {
     border-bottom: 2px dashed #f4a147;
   }
 }
+
 
 dd {
   margin-left: 2rem;
   margin-bottom: 1rem;
   padding-right: 1rem;
-}
 
-dd ul {
-  padding-left: 2rem;
-  margin: 0;
+  ul {
+    padding-left: 2rem;
+    margin: 0;
+  }
 }
 
 dt::before {
-  background-image: url(../images/css-file-outlineicon-icons.com57592.png);
+  background-image: url(../images/css-file-outline_icon-icons.com_57592.png);
   background-size: contain;
   display: inline-block;
   content: "";
@@ -176,7 +186,7 @@ dt::before {
 }
 
 strong.purple {
-  color: var(--couleur-dominante);
+  color: $couleur-dominante;
   text-transform: uppercase;
 }
 

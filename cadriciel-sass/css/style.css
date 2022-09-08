@@ -731,7 +731,7 @@ h4,
 /* Mise en page
    ========================================================================== */
 body {
-  color: var(--couleur-texte);
+  color: #022b50;
 }
 
 header .h1,
@@ -759,13 +759,13 @@ header p {
 
 header,
 footer {
-  background-color: #efefef;
+  background-color: grey;
 }
 
 header {
   padding: 1rem;
-  border-bottom: 0.5rem solid #efefef;
-  border-image: linear-gradient #418cff, var darkmagenta 27;
+  border-bottom: 0.5rem solid grey;
+  border-image: linear-gradient #black, yellow 27;
 }
 
 /*** Contenus principal et complémentaire ***/
@@ -775,18 +775,19 @@ aside {
 
 @media (min-width: 601px) {
   aside {
-    background-color: var(--bg-couleur-contraste);
+    background-color: grey;
   }
 }
 .description {
+  border-left-style: solid;
+  border-left-width: 5rem;
+  border-left-color: grey;
   padding: 0 2rem 0;
-  border-left: 5rem solid var(--bg-couleur-contraste);
-  border-image: linear-gradient(var(--couleur-dominante), var(--couleur-secondaire)) 27;
 }
 
 .description .h2,
 aside h2 {
-  color: var(--couleur-titres-h1-h3);
+  color: red;
 }
 
 aside h2 {
@@ -818,39 +819,40 @@ dl,
   margin-bottom: 3rem;
   background-color: rgb(234, 226, 234);
 }
-
 @media (min-width: 601px) {
   .infos {
     padding: 1rem calc(10% + 1rem);
-    box-shadow: var(--box-shadow);
+    box-shadow: 5px 5px 5px;
     width: 120%;
-    margin-left: -10%;
-    margin-top: 1rem;
+  }
+  .infos margin {
+    top: 1rem;
+    left: -10%;
   }
 }
+
 dt {
   font-family: NewsCycle-bold, sans-serif;
-  color: var(--couleur-dominante);
+  color: yellow;
 }
-
 @media (min-width: 601px) {
   dt {
     border-bottom: 2px dashed #f4a147;
   }
 }
+
 dd {
   margin-left: 2rem;
   margin-bottom: 1rem;
   padding-right: 1rem;
 }
-
 dd ul {
   padding-left: 2rem;
   margin: 0;
 }
 
 dt::before {
-  background-image: url(../images/css-file-outlineicon-icons.com57592.png);
+  background-image: url(../images/css-file-outline_icon-icons.com_57592.png);
   background-size: contain;
   display: inline-block;
   content: "";
@@ -860,7 +862,7 @@ dt::before {
 }
 
 strong.purple {
-  color: var(--couleur-dominante);
+  color: yellow;
   text-transform: uppercase;
 }
 
